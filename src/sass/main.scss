@@ -1,0 +1,25 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.conteiner {
+  display: block;
+}
+
+.link {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: palevioletred;
+  margin: 15px 0 0 15px;
+  display: block;
+  border-radius: 5px;
+  border: none;
+  width: fit-content;
+}
+
+.link:hover {
+  background-color: blue;
+  color: black;
+}

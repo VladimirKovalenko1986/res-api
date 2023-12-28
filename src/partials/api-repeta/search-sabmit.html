@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../sass/api-repeta/api-repeta.scss" />
+    <title>Search submit</title>
+  </head>
+  <body>
+    <a href="../../index.html" class="link">Home</a>
+
+    <form class="form-submite js-form-search">
+      <input
+        class="input-submite"
+        type="text"
+        name="query"
+        placeholder="Що шукаємо?"
+      />
+      <button type="submit" class="bitton-submite js-bitton-submite">
+        Search
+      </button>
+    </form>
+    <ul class="articles js-articles"></ul>
+
+    <button class="btn btn-primary js-btn" type="button">
+      <span
+        class="spinner-border spinner-border-sm spinner"
+        aria-hidden="true"
+      ></span>
+      <span class="label">Load More</span>
+    </button>
+
+    <script src="../../js/api-repeta/search-submit.js" type="module"></script>
+  </body>
+</html>
