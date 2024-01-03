@@ -53,3 +53,21 @@ body {
   background-color: blue;
   border: 2px solid blue;
 }
+
+.list-weather {
+  margin-top: 50px;
+  width: 100%; /* Змінено на 100% */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-weather {
+  box-sizing: border-box; /* Додано для врахування padding та border у загальній ширині */
+  width: calc(33.3% - 20px); /* Ширина картки, враховуючи відступи між ними */
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 10px 10px 0; /* Відступи між картками */
+  text-align: center;
+  list-style-type: none;
+}

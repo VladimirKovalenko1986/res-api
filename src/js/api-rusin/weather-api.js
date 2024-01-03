@@ -7,17 +7,25 @@ function onSearchForm(e) {
   e.preventDefault();
   const { query, days } = e.currentTarget.elements;
   getWeather(query.value, days.value)
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data.forecast.forecastday);
+      list.innerHTML = createMarkup(data.forecast.forecastday);
+    })
     .catch(err => console.log(err));
 }
 
 function getWeather(city, days) {
   const BASE_URL = 'http://api.weatherapi.com/v1';
-  const API_KEY = '9b5c61074eae4d77983194356240101';
+  const API_KEY = '8b4fe16a6b6541a5a4c203418240301';
 
-  return fetch(
-    `${BASE_URL}/forecast.json?key=${API_KEY}&q=${city}&days=${days}`
-  ).then(responce => {
+  const params = new URLSearchParams({
+    key: API_KEY,
+    q: city,
+    days: days,
+    lang: 'uk',
+  });
+
+  return fetch(`${BASE_URL}/forecast.json?${params}`).then(responce => {
     if (!responce.ok) {
       throw new Error(responce.statusText);
     }
@@ -28,13 +36,21 @@ function getWeather(city, days) {
 
 function createMarkup(arr) {
   return arr
-    .map(({}) => {
-      return `<li>
-        <img src="" alt="" />
-        <p></p>
-        <h2></h2>
-        <h3></h3>
+    .map(
+      ({
+        date,
+        day: {
+          avgtemp_c,
+          condition: { text, icon },
+        },
+      }) => {
+        return `<li class="item-weather">
+        <img src="${icon}" alt="${text}" />
+        <p>${text}</p>
+        <h2>${date}</h2>
+        <h3>${avgtemp_c}</h3>
       </li>`;
-    })
+      }
+    )
     .join('');
 }
