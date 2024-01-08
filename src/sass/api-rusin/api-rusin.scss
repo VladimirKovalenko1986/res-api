@@ -71,3 +71,41 @@ body {
   text-align: center;
   list-style-type: none;
 }
+
+.list-card {
+  width: 100%; /* Змінено на 100% */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.list-item-card {
+  list-style-type: none;
+  box-sizing: border-box; /* Додано для врахування padding та border у загальній ширині */
+  width: calc(25% - 20px); /* Ширина картки, враховуючи відступи між ними */
+  margin: 0 20px 20px 0; /* Відступи між картками */
+}
+
+.list-img-card {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+.load-more-button {
+  padding: 11px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(41, 171, 211);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden {
+  display: none;
+}
